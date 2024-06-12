@@ -1,0 +1,18 @@
+current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+/home/susmi/.rvm/rubies/ruby-3.0.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240612-1712-q2fp95 sitelibdir\=./.gem.20240612-1712-q2fp95 clean
+
+current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240612-1712-q2fp95 sitelibdir\=./.gem.20240612-1712-q2fp95
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240612-1712-q2fp95 sitelibdir\=./.gem.20240612-1712-q2fp95 install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20240612-1712-q2fp95
+
+current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240612-1712-q2fp95 sitelibdir\=./.gem.20240612-1712-q2fp95 clean
