@@ -30,18 +30,18 @@ ar: creating build/libprism.a
 creating Makefile
 
 current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/prism-0.30.0/ext/prism
-make DESTDIR\= sitearchdir\=./.gem.20240612-3754-a2rt48 sitelibdir\=./.gem.20240612-3754-a2rt48 clean
+make DESTDIR\= sitearchdir\=./.gem.20240613-1397-iymz2w sitelibdir\=./.gem.20240613-1397-iymz2w clean
 
 current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/prism-0.30.0/ext/prism
-make DESTDIR\= sitearchdir\=./.gem.20240612-3754-a2rt48 sitelibdir\=./.gem.20240612-3754-a2rt48
+make DESTDIR\= sitearchdir\=./.gem.20240613-1397-iymz2w sitelibdir\=./.gem.20240613-1397-iymz2w
 compiling api_node.c
 compiling api_pack.c
 compiling extension.c
 linking shared-object prism/prism.so
 
 current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/prism-0.30.0/ext/prism
-make DESTDIR\= sitearchdir\=./.gem.20240612-3754-a2rt48 sitelibdir\=./.gem.20240612-3754-a2rt48 install
-/usr/bin/install -m 0755 prism.so ./.gem.20240612-3754-a2rt48/prism
+make DESTDIR\= sitearchdir\=./.gem.20240613-1397-iymz2w sitelibdir\=./.gem.20240613-1397-iymz2w install
+/usr/bin/install -m 0755 prism.so ./.gem.20240613-1397-iymz2w/prism
 
 current directory: /home/susmi/finance_track/vendor/bundle/ruby/3.0.0/gems/prism-0.30.0/ext/prism
-make DESTDIR\= sitearchdir\=./.gem.20240612-3754-a2rt48 sitelibdir\=./.gem.20240612-3754-a2rt48 clean
+make DESTDIR\= sitearchdir\=./.gem.20240613-1397-iymz2w sitelibdir\=./.gem.20240613-1397-iymz2w clean
