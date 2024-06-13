@@ -1,0 +1,24 @@
+<!-- app/views/stocks/stock_symbols.html.erb -->
+
+<h1>Stock Symbols</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |symbol| %>
+      <tr>
+        <td><%= symbol.display_symbol %></td>
+        <td><%= symbol.description %></td>
+        <td><%= symbol.type %></td>
+        <td><%= symbol.currency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

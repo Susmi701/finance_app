@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'my_portfolio', to: 'users#my_portfolio'
+  get 'stock_symbols', to: 'stocks#stock_symbols'
+  get 'quote', to: 'stocks#quote'
+  get 'search', to: 'stocks#search'
+  
   devise_for :users
    root 'welcome#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
