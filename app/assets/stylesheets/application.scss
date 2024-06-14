@@ -14,7 +14,16 @@
  *= require_self
  */
  @import "bootstrap";
+ @import "font-awesome";
 
  .navbar-brand{
     font-size: 3rem;
+ }
+
+ .search-area{
+   padding-top: 50px;
+ }
+ .card-header {
+   display: inline-block;
+   gap: 15px;
  }
