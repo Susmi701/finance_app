@@ -1,23 +1,26 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <%= link_to "FinanceTracker",root_path,class:"navbar-brand" %>
+    <% if current_user%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <%= link_to "My Portfolio",my_portfolio_path,class:"nav-link active"%>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Profile
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><%= link_to edit_user_registration_path(current_user),class:"dropdown-item" do%>
+            <%=fa_icon "edit"%> Edit profile
+            <%end%></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -27,10 +30,19 @@
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item pt-2">
+         <%= fa_icon 'user' %> <%= "#{current_user.first_name} #{current_user.last_name}"%>
+        </li>
+        <li class="nav-item ">
+           <%= button_to "LogOut", destroy_user_session_path, method: :delete,class: "btn btn-xs btn-danger mx-3" %>
+          </li>
+      </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
+    <%end%>
   </div>
 </nav>
