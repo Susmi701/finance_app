@@ -1,0 +1,5 @@
+<% if @stock %>
+  $('#results').html('<%= j render('users/result') %>');
+<% else %>
+  $('#results').html('<%= j render partial: 'shared/flash', locals: { key: :alert, message: 'Please enter a valid symbol to search' } %>');
+<% end %>

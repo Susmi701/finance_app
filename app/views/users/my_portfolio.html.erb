@@ -1,9 +1,9 @@
 <h1>My portfolio</h1>
-  
+
 <div class="search-area">
-    <h3>Search Stocks</h3>
+  <h3>Search Stocks</h3>
 </div>
-<%= form_tag quote_path, method: :get do %>
+ <%= form_tag quote_path, remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
@@ -15,9 +15,10 @@
       </div>
     </div>
   <% end %>
-  <div class="results my-3">
-      <%= render 'users/result'%>
-    </div>
-<%if @tracked_stocks%>
-<%= render 'stocks/list'%>
- <% end %>
+<div id="results my-3">
+  <%= render 'users/result' %>
+</div>
+
+<% if @tracked_stocks %>
+  <%= render 'stocks/list' %>
+<% end %>
