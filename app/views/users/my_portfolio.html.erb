@@ -4,7 +4,7 @@
   <h3>Search Stocks</h3>
 </div>
 <%= form_tag(quote_path, remote: true, method: :get) do%>
-  <div class="form-group row my-5">
+  <div class="form-group row mb-3">
     <div class="col-sm-9 no-right-padding">
       <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
     </div>
