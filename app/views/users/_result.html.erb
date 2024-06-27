@@ -1,6 +1,8 @@
 <%if @stock%>
-<div class="card ">
-  <div class="card-header d-flex ">
+<div class="row ">
+  <div class="col-9">
+<div class="card my-3">
+  <div class="card-header d-flex justify-content-between">
     <div><strong>Symbol:</strong> <%= @stock.ticker %></div>
     <div><strong>Name:</strong> <%= @stock.name %></div>
     <div><strong>Price:</strong> <%= @stock.last_price %></div>
@@ -16,6 +18,8 @@
     <%end %>
     </span>
     <%end %>
+  </div>
+</div>
   </div>
 </div>
 <%end %>

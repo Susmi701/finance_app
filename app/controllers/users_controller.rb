@@ -17,7 +17,9 @@ class UsersController < ApplicationController
       @friends_list=User.search(params[:friend])
       @friends_list=current_user.except_current_user(@friends_list)
       if @friends_list.present?
-        render 'users/my_friends'
+         respond_to do |format|            
+          format.js { render partial: 'friendships/friends_js' }
+         end
       else
         flash[:alert] = "Please enter a valid symbol to search"
         redirect_to friends_path

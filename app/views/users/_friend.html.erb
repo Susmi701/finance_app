@@ -1,16 +1,20 @@
 <%if @friends_list%>
-    <div class="card ">
+<div class="row ">
+  <div class="col-9">
+    <div class="card my-3">
         <% @friends_list.each do |friend| %>
             <div class="card-header d-flex ">
                 <div><strong>Name:</strong> <%= "#{friend.first_name} #{friend.last_name}" %></div>
                 <div><strong>Email:</strong> <%= friend.email %></div>
                 <%= link_to "View Profile", user_path(friend), class: "btn btn-success"%>
                 <% if current_user.not_friends_with?(friend.id)%>
-                <%= link_to "Follow", friendships_path(friend: friend) , class: "btn btn-success",method: :post, data: { turbo_method: :post } %>
+                <%= link_to "Follow", friendships_path(friend: friend) , class: "btn btn-success",method: :post%>
                 <% else %>
                     <span class="badge bg-primary">You are already friends </span>
                 <% end %>
             </div>
     <% end %>
     </div>
+     </div>
+      </div>
 <% end %>

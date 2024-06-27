@@ -3,22 +3,21 @@
 <div class="search-area">
   <h3>Search Stocks</h3>
 </div>
- <%= form_tag quote_path, remote: true, method: :get do %>
-    <div class="form-group row">
-      <div class="col-sm-9 no-right-padding">
-        <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
-      </div>
-      <div class="col-sm-3 no-left-padding">
-        <%= button_tag type: :submit, class: "btn btn-success" do %>
-          <%= fa_icon 'search 2x' %>
-        <% end %>
-      </div>
+<%= form_tag(quote_path, remote: true, method: :get) do%>
+  <div class="form-group row my-5">
+    <div class="col-sm-9 no-right-padding">
+      <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %>
     </div>
-  <% end %>
-<div id="results my-3">
-  <%= render 'users/result' %>
-</div>
-
-<% if @tracked_stocks %>
-  <%= render 'stocks/list' %>
+    <div class="col-sm-3 no-left-padding">
+      <%= button_tag type: :submit, class: "btn btn-success" do %>
+        <%= fa_icon 'search 2x' %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
+
+  <div id="results">
+
+  </div>
+
+  <%= render 'stocks/list' %>

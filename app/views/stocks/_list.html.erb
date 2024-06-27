@@ -1,4 +1,5 @@
-<div class="row">
+<% if @tracked_stocks.present?%>
+<div class="row ">
   <div class="col-9">
     
     <table class="table table-bordered table-hover">
@@ -17,7 +18,7 @@
           <td><%= stock.name %></td>
           <td><%= stock.last_price %></td>
           <%if current_user.id == @user.id %>
-            <td><%= link_to "Remove", user_stock_path(stock), class: "btn btn-warning btn-sm", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete  account?" } %>
+            <td><%= link_to "Remove", user_stock_path(stock), class: "btn btn-warning btn-sm", method: :delete%>
             </td>
              <% end %>
         </tr>
@@ -26,3 +27,4 @@
     </table>
   </div>
 </div>
+<%end %>

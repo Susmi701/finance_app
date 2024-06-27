@@ -6,7 +6,7 @@ validates :name , :ticker, presence: true
     def self.new_lookup(ticker_symbol)
         finnhub_client = FinnhubRuby::DefaultApi.new
         begin
-          profile = finnhub_client.company_profile2({symbol: ticker_symbol})
+          profile = finnhub_client.company_profile2({symbol: ticker_symbol.upcase})
           quote = finnhub_client.quote(ticker_symbol)
           new(
             ticker: ticker_symbol.upcase,

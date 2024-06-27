@@ -3,8 +3,9 @@
 <div class="search-area">
     <h3>Search friends</h3>
 </div>
-<%= form_tag search_friend_path, method: :get do %>
-    <div class="form-group row">
+<%= form_tag(search_friend_path, remote: true, method: :get) do%>
+
+    <div class="form-group row my-5">
       <div class="col-sm-9 no-right-padding">
         <%= text_field_tag :friend, params[:stock], placeholder: "Name or email ", autofocus: true, class: "form-control form-control-lg" %>
       </div>
@@ -15,9 +16,9 @@
       </div>
     </div>
   <% end %>
-  <div class="freinds my-3">
-      <%= render 'users/friend'%>
-    </div>
+  <div id="friends">
+      
+  </div>
 
 <%if @friends%>
 <%= render "friendships/friends"%>

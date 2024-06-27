@@ -16,7 +16,7 @@
           <th scope="row"><%= friend.email %></th>
           <td><%= friend.first_name %></td>
           <td><%= friend.last_name %></td>
-            <td><%= link_to "Stop Following",friendship_path(friend), class: "btn btn-warning btn-sm", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to unfollow this  account?" } %>
+            <td><%= link_to "Stop Following",friendship_path(friend), class: "btn btn-warning btn-sm", method: :delete%>
             </td>
         </tr>
         <% end %>
