@@ -4,3 +4,4 @@ FinnhubRuby.configure do |config|
 end
 
 
+

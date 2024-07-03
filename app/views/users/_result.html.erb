@@ -1,15 +1,15 @@
 <%if @stock%>
-<div class="row ">
+<div class="row pt-3">
   <div class="col-9">
-<div class="card my-3">
+<div class="card ">
   <div class="card-header d-flex justify-content-between">
     <div><strong>Symbol:</strong> <%= @stock.ticker %></div>
     <div><strong>Name:</strong> <%= @stock.name %></div>
     <div><strong>Price:</strong> <%= @stock.last_price %></div>
     <% if current_user.can_track_stock?(@stock.ticker)%>
-      <%= link_to "Add to Portfolio", user_stocks_path(user: current_user, ticker: @stock.ticker), class: "btn btn-success", data: { turbo_method: :post } %>
+      <%= link_to "Buy", user_stocks_path(user: current_user, ticker: @stock.ticker), class: "btn btn-success", data: { turbo_method: :post } %>
     <% else %>
-    <span class="badge bg-primary">You are already tracking
+    <span class="badge bg-primary justify-content-center">You are already tracking 
     <%if !current_user.under_stock_limit?%>
      10 stocks
     <%end %>

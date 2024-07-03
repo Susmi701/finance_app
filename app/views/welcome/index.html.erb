@@ -1,2 +1,66 @@
-<h1>Welcome to Finance Tracker</h1>
-  <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-3 ">
+      <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title pb-3">Market Previews</h5>
+            <% if @stocks.present? %>
+              <% @stocks.each do |stock| %>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h5> <span class="badge text-bg-warning"><%= stock[:ticker] %></span></h5>
+                  <span><%= number_to_currency(stock[:price].c, unit: "$", precision: 2) %></span>
+                  <% if stock[:price].dp.present? %>
+                    <span class="<%= stock[:price].dp&.to_f > 0 ? 'text-success' : 'text-danger' %>">
+                      <%= number_to_percentage(stock[:price].dp, precision: 2) %>
+                    </span>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+
+          <div class="card-footer border-o p-0 ">
+            <a href="#" class="btn btn-primary d-block btn-sm">Show More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-5">      
+        <div class="card-body">
+          
+           <%= render 'user_stocks/history' %>
+          <div class="card-footer border-o p-0 ">
+            <a href="#" class="btn btn-primary d-block btn-sm">Show More</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col">
+      <div class="card">      
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <%= render 'users/search_form' %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card mt-5">
+        <h4 class="heading p-3">Area Chart-COVID-19 Stats</h4>
+        <div class="card-body">
+         <%= area_chart @covid_stats, library: { title: 'COVID-19 Stats' } %>
+        </div>
+      </div>
+
+
+      <div class="card mt-5"> 
+        <h4 class="heading p-3">Pie Chart</h4>     
+        <div class="card-body">
+          <%= pie_chart UserStock.group_by_day(:stock_id).count%>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -16,8 +16,15 @@
  @import "bootstrap";
  @import "font-awesome";
 
+ .navbar {
+  background-color: #212097 !important;
+}
+.nav-link {
+  color: white !important;
+}
  .navbar-brand{
     font-size: 3rem;
+    color: white 
  }
 
  .search-area{

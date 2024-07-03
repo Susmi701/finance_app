@@ -1,0 +1,19 @@
+<h5 class="card-title pb-3">Trade History</h5>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Ticker</th>
+        <th scope="col">Time</th>
+        <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @stockHistory.each do |stockHistory|%>
+    <tr>
+        <td ><%= stockHistory.stock.ticker %></td>
+        <td><%= stockHistory.created_at.strftime('%Y-%m-%d') %></td>
+        <td><%= stockHistory.stock.last_price %></td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>

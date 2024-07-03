@@ -1,0 +1,19 @@
+<%= form_tag(quote_path, remote: true, method: :get) do%>
+  <div class="form-group row ">
+    <div class="col-sm-9 ">
+        <div class="input-group">
+            <%= text_field_tag :stock, params[:stock], placeholder: "Search stock...",  class: "form-control form-control-lg bg-secondary-subtle" %>
+            <div class="input-group-text bg-secondary-subtle">
+            <%= button_tag type: :submit, class: "bg-secondary-subtle border-0" do %>
+                <%= fa_icon 'search ' %>
+            <% end %>
+            </div>
+      </div>
+    </div>
+
+  </div>
+<% end %>
+
+  <div id="results">
+
+  </div>

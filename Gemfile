@@ -75,3 +75,6 @@ gem "devise-i18n"
 gem "devise-bootstrap5"
 gem 'finnhub_ruby', '~> 1.1', '>= 1.1.19'
 gem "font-awesome-rails"
+gem "chartkick", "~> 5.0"
+
+gem "groupdate", "~> 6.4"

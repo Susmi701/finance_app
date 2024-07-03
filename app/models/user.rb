@@ -27,7 +27,6 @@ class User < ApplicationRecord
             to_send_back = where('email LIKE :query OR first_name LIKE :query OR last_name LIKE :query', query: "%#{query}%")
             return nil unless to_send_back
             to_send_back
-          
         end
 
         def except_current_user(friends)

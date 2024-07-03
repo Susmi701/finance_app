@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   resources :user_stocks, only: [:create , :destroy]
   resources :friendships, only: [:create , :destroy]
-
   get 'my_portfolio', to: 'users#my_portfolio'
   get 'quote', to: 'stocks#quote'
   get 'search_friend', to: 'users#search'
   get 'friends', to: 'users#my_friends'
+  
   devise_for :users
   resources :users, only: [:show]
-   root 'welcome#index'
+   root 'stocks#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
