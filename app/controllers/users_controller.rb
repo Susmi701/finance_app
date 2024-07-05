@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @friends_list=current_user.except_current_user(@friends_list)
       if @friends_list.present?
          respond_to do |format|            
-          format.js { render partial: 'friendships/friends_js' }
+          format.js { render partial: 'friends_js' }
          end
       else
         flash[:alert] = "Please enter a valid symbol to search"
