@@ -78,3 +78,7 @@ gem "font-awesome-rails"
 gem "chartkick", "~> 5.0"
 
 gem "groupdate", "~> 6.4"
+
+gem "sidekiq", "~> 7.3"
+
+gem "sidekiq-scheduler", "~> 5.0"

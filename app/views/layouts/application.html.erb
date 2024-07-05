@@ -12,9 +12,9 @@
   <body>
     <%= render "layouts/nav" %>
     <%= render "layouts/messages" %>
-    <div class="container">
-    
-    <%= yield %>
+    <div class="container py-3" id="page-content">   
+      <%= yield %>
     </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

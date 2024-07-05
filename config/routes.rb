@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   devise_for :users
   resources :user_stocks, only: [:create , :destroy]
@@ -18,4 +19,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  mount Sidekiq::Web => '/sidekiq'
 end
