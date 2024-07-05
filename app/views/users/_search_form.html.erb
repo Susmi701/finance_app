@@ -1,19 +1,27 @@
-<%= form_tag(quote_path, remote: true, method: :get) do%>
+<%= form_tag(quote_path, remote: true, method: :get,id:'search_stock_form') do%>
   <div class="form-group row ">
     <div class="col-sm-9 ">
-        <div class="input-group">
-            <%= text_field_tag :stock, params[:stock], placeholder: "Search stock...",  class: "form-control form-control-lg bg-secondary-subtle" %>
-            <div class="input-group-text bg-secondary-subtle">
+      <div class="input-group">
+        <%= text_field_tag :stock, params[:stock], placeholder: "Search stock...", class: "form-control form-control-lg bg-secondary-subtle" %>
+          <div class="input-group-append bg-secondary-subtle pt-2">
             <%= button_tag type: :submit, class: "bg-secondary-subtle border-0" do %>
-                <%= fa_icon 'search ' %>
+              <%= fa_icon 'search 1x',id:"fav_id" %>
+
+                <div id="myModal" class="modal" style="position: relative;" >
+               
+                    <div class="spinner-border spinner-border-sm"  role="status">
+                      <span class="sr-only">Loading...</span>
+                    
+                  </div>
+                </div>
             <% end %>
-            </div>
+          </div>
       </div>
     </div>
-
   </div>
+    
 <% end %>
 
   <div id="results">
-
+     
   </div>

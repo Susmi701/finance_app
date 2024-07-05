@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :user_stocks, only: [:create , :destroy]
   resources :friendships, only: [:create , :destroy]
   get 'my_portfolio', to: 'users#my_portfolio'
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   get 'search_friend', to: 'users#search'
   get 'friends', to: 'users#my_friends'
   
-  devise_for :users
+ 
   resources :users, only: [:show]
    root 'stocks#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

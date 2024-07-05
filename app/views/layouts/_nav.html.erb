@@ -19,7 +19,7 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto ">
-        <li><%= link_to edit_user_registration_path(current_user),class:"nav-item text-decoration-none text-white mb-5" do%>
+        <li class="nav-item mt-2"><%= link_to edit_user_registration_path(current_user),class:"text-decoration-none text-white mt-5" do%>
             <%= fa_icon 'user' %> <%= "#{current_user.first_name} #{current_user.last_name}"%>
             <%end%></li>
 

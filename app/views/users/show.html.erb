@@ -9,7 +9,7 @@
         <td><strong>Email: </strong> <%= @user.email %></td>
         <td>
           <% if current_user.not_friends_with?(@user.id) %>
-                           <%= link_to "Follow", friendships_path(friend: @user) , class: "btn btn-sm btn-success",method: :post, data: { turbo_method: :post } %>
+              <%= link_to "Follow", friendships_path(friend: @user) , class: "btn btn-sm btn-success",method: :post%>
 
           <% else %>
             <span class="badge badge-secondary">
@@ -22,7 +22,7 @@
   </table>
 </div>
 
-<% if @tracked_stocks %>
+<% if @stocks %>
   <%= render 'stocks/list'%>
 <% else %>
   <p class='lead'>This user is not tracking any stocks</p>
